@@ -1,27 +1,27 @@
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Home.module.css';
 import supabase from '../utils/supabase';
 
 type Album = {
   id: string;
   name: string;
-}
+};
 
 type Props = {
-  albums: Album[]
-}
+  albums: Album[];
+};
 
 export async function getStaticProps() {
-  const {data: albums, error } = await supabase.from('albums').select('*');
+  const { data: albums, error } = await supabase.from('albums').select('*');
 
-  if(error){
+  if (error) {
     throw error;
   }
 
   return {
     props: {
-      albums
-    }
-  }
+      albums,
+    },
+  };
 }
 
 export default function Home(props: Props) {
@@ -30,5 +30,5 @@ export default function Home(props: Props) {
       <h1>Albums</h1>
       <pre>{JSON.stringify(props.albums, null, 2)}</pre>
     </div>
-  )
+  );
 }

@@ -1,10 +1,6 @@
-
-
 type Props = {
-    // albums: AlbumModel[]
-}
+  // albums: AlbumModel[]
+};
 
-const Albums = () => {
-
-}
+const Albums = () => {};
 export default Albums;
